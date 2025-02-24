@@ -95,7 +95,7 @@ class _Pantallaprincipal extends State<Pantallaprincipal> {
           Botones.porcentaje,
         ].contains(value)
         ? Colors.blue
-        : Colors.black87;
+        : Colors.black26;
   }
 
   void onBotonesTap(String value) {
@@ -180,7 +180,21 @@ class _Pantallaprincipal extends State<Pantallaprincipal> {
     });
   }
 
-  void porcentaje() {}
+  void porcentaje() {
+    if (numero1.isNotEmpty && operacion.isNotEmpty && numero2.isNotEmpty) {
+      igual();
+    }
+    if (operacion.isNotEmpty) {
+      return;
+    }
+
+    final numero = double.parse(numero1);
+    setState(() {
+      numero1 = '${(numero / 100)}';
+      operacion = '';
+      numero2 = '';
+    });
+  }
 
   void tomarValores(String value) {
     if (value != Botones.punto && int.tryParse(value) == null) {
