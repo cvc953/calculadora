@@ -68,7 +68,7 @@ class _Pantallaprincipal extends State<Pantallaprincipal> {
         clipBehavior: Clip.hardEdge,
         shape: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.blue),
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(50),
         ),
         child: InkWell(
           onTap: () => onBotonesTap(value),
@@ -94,8 +94,8 @@ class _Pantallaprincipal extends State<Pantallaprincipal> {
           Botones.igual,
           Botones.porcentaje,
         ].contains(value)
-        ? Colors.blue
-        : Colors.black26;
+        ? Colors.blueAccent
+        : Colors.grey;
   }
 
   void onBotonesTap(String value) {
